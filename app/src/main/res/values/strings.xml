@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">"DxK App"</string>
+    <string name="login_button">"LOGIN"</string>
+    <string name="login_label">"Enter Name"</string>
+    <string name="cities">"CITIES"</string>
+    <string name="parks">"PARKS"</string>
+    <string name="music">"MUSIC"</string>
+    <string name="movies">"MOVIES"</string>
+    <string name="traffic">"TRAFFIC"</string>
+    <string name="food">"FOOD"</string>
+    <string name="hint">"Please, enter a name!"</string>
+</resources>
