@@ -4,6 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ASP/Java/DxKApplication/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_details.xml" value="0.2515625" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_main.xml" value="0.17426545086119555" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_movies.xml" value="0.25" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_movies_layout.xml" value="0.2246376811594203" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/main_activity.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity_details.xml" value="0.25" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity_layout.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/toolbar_activity.xml" value="0.24114583333333334" />
       </map>
     </option>
   </component>

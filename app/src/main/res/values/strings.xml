@@ -9,4 +9,9 @@
     <string name="traffic">"TRAFFIC"</string>
     <string name="food">"FOOD"</string>
     <string name="hint">"Please, enter a name!"</string>
+    <string name="titleDetail">"Movie Title Detail"</string>
+    <string name="yearDetail">"Movie Year Detail"</string>
+    <string name="movieDetail">"Movie Description Detail"</string>
+    <string name="movieImageDetail">"Movie Image Detail"</string>
+    <string name="movieLayoutImage">"Movie Layout Image"</string>
 </resources>

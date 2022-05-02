@@ -10,6 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DxKApplication">
         <activity
+            android:name=".MoviesActivity"
+            android:exported="true"
+            android:parentActivityName=".MoviesActivity">
+        </activity>
+        <activity
+            android:name=".MoviesDetailsActivity"
+            android:exported="true"
+            android:parentActivityName=".MoviesDetailsActivity">
+        </activity>
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
