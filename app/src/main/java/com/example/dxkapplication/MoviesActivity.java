@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 
 public class MoviesActivity extends AppCompatActivity {
 
@@ -88,6 +90,9 @@ public class MoviesActivity extends AppCompatActivity {
         public void onBindViewHolder(ViewHolder viewHolder, int position) {
             viewHolder.title.setText(movie[position][0]);
             viewHolder.year.setText(movie[position][1]);
+            Picasso instance = Picasso.get() ;
+            instance.setIndicatorsEnabled(true);
+            instance.load(movie[position][3]).into(viewHolder.image);
         }
 
         @Override

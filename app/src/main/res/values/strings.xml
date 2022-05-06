@@ -14,4 +14,5 @@
     <string name="movieDetail">"Movie Description Detail"</string>
     <string name="movieImageDetail">"Movie Image Detail"</string>
     <string name="movieLayoutImage">"Movie Layout Image"</string>
+    <string name="camLayoutImage">"Camera Layout Image"</string>
 </resources>

@@ -41,8 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button cities = findViewById(R.id.cities);
         Button parks = findViewById(R.id.parks);
         Button music = findViewById(R.id.music);
-        //button
+        //movies button
         Button movies = findViewById(R.id.movies);
+        //traffic button
         Button traffic = findViewById(R.id.traffic);
         Button food = findViewById(R.id.food);
 
@@ -71,8 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.movies:
                 openMoviesActivity();
                 break;
+            //switching to Camera Activity
             case R.id.traffic:
-                Toast.makeText(this, "Traffic", Toast.LENGTH_SHORT).show();
+                openLiveCamsActivity();
                 break;
             case R.id.food:
                 Toast.makeText(this, "Food", Toast.LENGTH_SHORT).show();
@@ -84,4 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, MoviesActivity.class);
         startActivity(intent);
     }
+
+    public void openLiveCamsActivity(){
+       Intent intent = new Intent(this, CameraActivity.class);
+      startActivity(intent);
+   }
 }

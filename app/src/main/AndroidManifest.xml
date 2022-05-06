@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dxkapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +12,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DxKApplication">
+
         <activity
             android:name=".MoviesActivity"
             android:exported="true"
             android:parentActivityName=".MoviesActivity">
         </activity>
+
         <activity
             android:name=".MoviesDetailsActivity"
             android:exported="true"
             android:parentActivityName=".MoviesDetailsActivity">
+        </activity>
+
+        <activity
+            android:name=".CameraActivity"
+            android:exported="true"
+            android:parentActivityName=".CameraActivity">
         </activity>
 
         <activity

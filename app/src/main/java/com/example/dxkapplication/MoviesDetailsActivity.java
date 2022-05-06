@@ -5,6 +5,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.squareup.picasso.Picasso;
+
 public class MoviesDetailsActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +23,9 @@ public class MoviesDetailsActivity extends AppCompatActivity {
     String[] movieDetails = bundle.getStringArray("detail");
     titleDetail.setText(movieDetails[0]);
     yearDetail.setText(movieDetails[1]);
+    Picasso instance = Picasso.get() ;
+    instance.setIndicatorsEnabled(true);
+    instance.load(movieDetails[3]).into(movieImageDetail);
     movieDetail.setText(movieDetails[4]);
     }
 }

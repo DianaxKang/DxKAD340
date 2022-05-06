@@ -8,11 +8,18 @@
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_main.xml" value="0.17426545086119555" />
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_movies.xml" value="0.25" />
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_movies_layout.xml" value="0.2246376811594203" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_traffic_cam_map.xml" value="0.1" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/activity_traffic_cameras.xml" value="0.1" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/camera_activity.xml" value="0.21979166666666666" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/camera_activity_layout.xml" value="0.21979166666666666" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/camera_entry.xml" value="0.1" />
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/main_activity.xml" value="0.18115942028985507" />
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity.xml" value="0.18115942028985507" />
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity_details.xml" value="0.25" />
-        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity_layout.xml" value="0.18115942028985507" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/movies_activity_layout.xml" value="0.1" />
         <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/toolbar_activity.xml" value="0.24114583333333334" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/traffic_cameras_activity.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/evuls/Desktop/DxKAD340/app/src/main/res/layout/traffic_cameras_layout.xml" value="0.1" />
       </map>
     </option>
   </component>
