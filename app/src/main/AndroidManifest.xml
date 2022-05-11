@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
 
     <application
         android:allowBackup="true"
@@ -12,6 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DxKApplication">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB8uudP7unPop6bLRDZDPSstDe-mOEldkc"
+            />
 
         <activity
             android:name=".MoviesActivity"
@@ -29,6 +38,12 @@
             android:name=".CameraActivity"
             android:exported="true"
             android:parentActivityName=".CameraActivity">
+        </activity>
+
+        <activity
+            android:name=".MapActivity"
+            android:exported="true"
+            android:parentActivityName=".MapActivity">
         </activity>
 
         <activity

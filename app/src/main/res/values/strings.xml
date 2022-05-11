@@ -1,18 +1,24 @@
 <resources>
     <string name="app_name">"DxK App"</string>
+    <!--Main Login-->
     <string name="login_button">"LOGIN"</string>
     <string name="login_label">"Enter Name"</string>
-    <string name="cities">"CITIES"</string>
+    <string name="hint">"Please, enter a name!"</string>
+    <!--Buttons-->
+    <string name="cities">"MAP"</string>
     <string name="parks">"PARKS"</string>
     <string name="music">"MUSIC"</string>
     <string name="movies">"MOVIES"</string>
     <string name="traffic">"TRAFFIC"</string>
     <string name="food">"FOOD"</string>
-    <string name="hint">"Please, enter a name!"</string>
+    <!--Movie Activity-->
     <string name="titleDetail">"Movie Title Detail"</string>
     <string name="yearDetail">"Movie Year Detail"</string>
     <string name="movieDetail">"Movie Description Detail"</string>
     <string name="movieImageDetail">"Movie Image Detail"</string>
     <string name="movieLayoutImage">"Movie Layout Image"</string>
+    <!--Camera Activity-->
     <string name="camLayoutImage">"Camera Layout Image"</string>
+    <!--Map Activity-->
+    <string name="mapText">"Map Location"</string>
 </resources>

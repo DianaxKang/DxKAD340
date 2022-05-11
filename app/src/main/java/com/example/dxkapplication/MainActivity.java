@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        //location
         Button cities = findViewById(R.id.cities);
         Button parks = findViewById(R.id.parks);
         Button music = findViewById(R.id.music);
@@ -59,8 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            //switching to Map Activity
             case R.id.cities:
-                Toast.makeText(this, "Cities", Toast.LENGTH_SHORT).show();
+                openMapActivity();
                 break;
             case R.id.parks:
                 Toast.makeText(this, "Parks", Toast.LENGTH_SHORT).show();
@@ -91,4 +93,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        Intent intent = new Intent(this, CameraActivity.class);
       startActivity(intent);
    }
+
+    public void openMapActivity(){
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
 }
