@@ -19,8 +19,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyB8uudP7unPop6bLRDZDPSstDe-mOEldkc"
-            />
+            android:value="${MAPS_API_KEY}" />
 
         <activity
             android:name=".MoviesActivity"
