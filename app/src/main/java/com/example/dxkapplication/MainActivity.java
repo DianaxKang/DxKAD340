@@ -1,14 +1,40 @@
 package com.example.dxkapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.protobuf.StringValue;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    SharedPreferences sharedPref;
+    Button loginButton;
+    EditText usernameT;
+    EditText emailT;
+    EditText passwordT;
+    FirebaseAuth authentication;
 
     String[][] movies = {
             {"Night of the Comet","1984","","https://cdn.collider.com/wp-content/uploads/2016/10/night-of-comet.jpg","What would kids in the 1980s do if the apocalypse blew through the world without them noticing? Hang out at the mall, but of course. That’s the set-up for this very funny, quite dated horror-comedy, which begins when a quartet of adolescents lock themselves inside a projection booth at the mall’s multiplex. This somehow allows them to live through an extinction level event of some sort, which has also left roaming bands of murderous mutants. Catherine Mary Stewart of the equally inexplicable Weekend at Bernie’s leads the film, but it’s a movie of mood more than substance ultimately. Does the wealth-fueled naiveté of the average white teenager survive in a vacuum? Does it go away when they are being hunted for sustenance? It’s an interesting to watch on these terms and when the zombies show up, director Thom Eberhardt adds menace and a tight feel for suspense to the action sequences. And if we’re being honest, it belongs on this list for its soundtrack alone. The rest of this is just whip cream and cherries. – Chris Cabin"},
@@ -47,6 +73,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //traffic button
         Button traffic = findViewById(R.id.traffic);
         Button food = findViewById(R.id.food);
+        //login
+        usernameT = findViewById(R.id.username);
+        emailT = findViewById(R.id.email);
+        passwordT = findViewById(R.id.password);
+
+        Button loginButton = findViewById(R.id.login_button);
 
         cities.setOnClickListener(this);
         parks.setOnClickListener(this);
@@ -54,6 +86,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         movies.setOnClickListener(this);
         traffic.setOnClickListener(this);
         food.setOnClickListener(this);
+
+        sharedPref = MainActivity.this.getPreferences(Context.MODE_PRIVATE);
+        authentication = FirebaseAuth.getInstance();
+        usernameT.setText(getEntry("username"));
+        emailT.setText(getEntry("email"));
+        passwordT.setText(getEntry("password"));
+
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
+    }
+
+    public String getEntry(String key) {
+        return sharedPref.getString(key, "");
+    }
+
+    public void saveEntry(String key, String message) {
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(key, message);
+        editor.commit();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -97,5 +153,88 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void openMapActivity(){
         Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
+    }
+
+    public void signIn() {
+        Log.d("FIREBASE", "Log In");
+        String username = usernameT.getText().toString();
+        String email = emailT.getText().toString();
+        String password = passwordT.getText().toString();
+        if (!checkEntry(username, email, password)) {
+            return;
+        }
+
+        saveEntry("userName", username);
+        saveEntry("email", email);
+        saveEntry("password", password);
+
+        authentication.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Log.d("FIREBASE", "signIn:onComplete:" + task.isSuccessful());
+                                if (task.isSuccessful()) {
+                                    FirebaseUser user = authentication.getCurrentUser();
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(username)
+                                            .build();
+                                    assert user != null;
+                                    user.updateProfile(profileUpdates)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Log.d("FIREBASE", "User profile updated.");
+                                                        startActivity(new Intent(MainActivity.this, FirebaseActivity.class));
+                                                    }
+                                                }
+                                            });
+                                } else {
+                                    Log.d("FIREBASE", "sign-in failed");
+                                    Toast.makeText(MainActivity.this, "Sign In Failed",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                            Log.d("FIREBASE", "FirebaseAuthInvalidCredentialsException");
+                        } else if (e instanceof FirebaseAuthInvalidUserException) {
+                            String errorCode =
+                                    ((FirebaseAuthInvalidUserException) e).getErrorCode();
+                            if (errorCode.equals("ERROR_USER_NOT_FOUND")) {
+                                Log.d("FIREBASE", "ERROR_USER_NOT_FOUND");
+                            } else if (errorCode.equals("ERROR_USER_DISABLED")) {
+                                Log.d("FIREBASE", "ERROR_USER_DISABLED");
+                            } else {
+                                Log.d("FIREBASE", "OTHER_ERROR");
+                            }
+                        }
+                    }
+                });
+    }
+
+    private boolean checkEntry(String username, String email, String password) {
+        boolean checked = true;
+        if (TextUtils.isEmpty(username)) {
+            usernameT.setError("Required");
+            checked = false;
+        } else {
+            usernameT.setError(null);
+        }
+        if (TextUtils.isEmpty(email)) {
+            emailT.setError("Required");
+            checked = false;
+        } else {
+            emailT.setError(null);
+        }
+        if (TextUtils.isEmpty(password)) {
+            passwordT.setError("Required");
+            checked = false;
+        } else {
+            passwordT.setError(null);
+        }
+        return checked;
     }
 }

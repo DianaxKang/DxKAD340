@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/text_entry"
+        android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
@@ -20,7 +20,7 @@
         android:inputType="textPersonName"
         android:minHeight="50dp"
         android:text="@string/login_label"
-        app:layout_constraintBottom_toTopOf="@+id/cities"
+        app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toStartOf="@+id/login_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,28 +35,95 @@
         android:layout_marginBottom="15dp"
         android:minWidth="90dp"
         android:text="@string/login_button"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/username"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:autofillHints="Enter Email"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:minHeight="50dp"
+        android:text="@string/email_label"
+        app:layout_constraintBottom_toTopOf="@+id/cities"
+        app:layout_constraintEnd_toStartOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.669" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:minHeight="50dp"
+        android:autofillHints="Enter Password"
+        android:text="@string/password"
         app:layout_constraintBottom_toTopOf="@+id/movies"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_entry"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/username"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.669" />
+
+    <Button
+        android:id="@+id/movies"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:minHeight="50dp"
+        android:text="@string/movies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cities"
+        app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
     <Button
         android:id="@+id/cities"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:minHeight="50dp"
         android:text="@string/cities"
         app:layout_constraintEnd_toStartOf="@+id/movies"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_entry"/>
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <Button
-        android:id="@+id/movies"
+        android:id="@+id/music"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:minHeight="50dp"
+        android:text="@string/music"
+        app:layout_constraintEnd_toStartOf="@+id/food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parks" />
+
+    <Button
+        android:id="@+id/traffic"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -64,10 +131,25 @@
         android:layout_marginEnd="30dp"
         android:ems="10"
         android:minHeight="50dp"
-        android:text="@string/movies"
+        android:text="@string/traffic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cities"
-        app:layout_constraintTop_toBottomOf="@+id/login_button"/>
+        app:layout_constraintStart_toEndOf="@+id/parks"
+        app:layout_constraintTop_toBottomOf="@+id/movies" />
+
+    <Button
+        android:id="@+id/food"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:minHeight="50dp"
+        android:text="@string/food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/music"
+        app:layout_constraintTop_toBottomOf="@+id/traffic" />
 
     <Button
         android:id="@+id/parks"
@@ -82,50 +164,6 @@
         app:layout_constraintBottom_toTopOf="@+id/music"
         app:layout_constraintEnd_toStartOf="@+id/traffic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cities"/>
+        app:layout_constraintTop_toBottomOf="@+id/cities" />
 
-    <Button
-        android:id="@+id/traffic"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:minHeight="50dp"
-        android:text="@string/traffic"
-        app:layout_constraintBottom_toTopOf="@+id/food"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/parks"
-        app:layout_constraintTop_toBottomOf="@+id/movies"/>
-
-    <Button
-        android:id="@+id/music"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:ems="10"
-        android:minHeight="50dp"
-        android:text="@string/music"
-        app:layout_constraintEnd_toStartOf="@+id/food"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parks"/>
-
-    <Button
-        android:id="@+id/food"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
-        android:ems="10"
-        android:minHeight="50dp"
-        android:text="@string/food"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/music"
-        app:layout_constraintTop_toBottomOf="@+id/traffic"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

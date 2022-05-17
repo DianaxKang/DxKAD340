@@ -2,8 +2,10 @@
     <string name="app_name">"DxK App"</string>
     <!--Main Login-->
     <string name="login_button">"LOGIN"</string>
-    <string name="login_label">"Enter Name"</string>
-    <string name="hint">"Please, enter a name!"</string>
+    <string name="login_label">"Enter Your Name"</string>
+    <string name="email_label">"Enter Your Email"</string>
+    <string name="password">"Enter Your Password"</string>
+    <string name="hint">"username"</string>
     <!--Buttons-->
     <string name="cities">"MAP"</string>
     <string name="parks">"PARKS"</string>
