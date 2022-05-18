@@ -20,6 +20,12 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
+            android:name=".FirebaseActivity"
+            android:exported="true"
+            android:parentActivityName=".FirebaseActivity">
+        </activity>
+
+        <activity
             android:name=".MoviesActivity"
             android:exported="true"
             android:parentActivityName=".MoviesActivity">
