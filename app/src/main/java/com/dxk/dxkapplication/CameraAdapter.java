@@ -1,4 +1,4 @@
-package com.example.dxkapplication;
+package com.dxk.dxkapplication;
 
 import android.widget.TextView;
 import androidx.annotation.NonNull;

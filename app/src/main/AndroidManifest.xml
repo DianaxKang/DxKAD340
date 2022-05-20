@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dxkapplication">
+    package="com.dxk.dxkapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,37 +20,37 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".FirebaseActivity"
+            android:name="com.dxk.dxkapplication.FirebaseActivity"
             android:exported="true"
-            android:parentActivityName=".FirebaseActivity">
+            android:parentActivityName="com.dxk.dxkapplication.FirebaseActivity">
         </activity>
 
         <activity
-            android:name=".MoviesActivity"
+            android:name="com.dxk.dxkapplication.MoviesActivity"
             android:exported="true"
-            android:parentActivityName=".MoviesActivity">
+            android:parentActivityName="com.dxk.dxkapplication.MoviesActivity">
         </activity>
 
         <activity
-            android:name=".MoviesDetailsActivity"
+            android:name="com.dxk.dxkapplication.MoviesDetailsActivity"
             android:exported="true"
-            android:parentActivityName=".MoviesDetailsActivity">
+            android:parentActivityName="com.dxk.dxkapplication.MoviesDetailsActivity">
         </activity>
 
         <activity
-            android:name=".CameraActivity"
+            android:name="com.dxk.dxkapplication.CameraActivity"
             android:exported="true"
-            android:parentActivityName=".CameraActivity">
+            android:parentActivityName="com.dxk.dxkapplication.CameraActivity">
         </activity>
 
         <activity
-            android:name=".MapActivity"
+            android:name="com.dxk.dxkapplication.MapActivity"
             android:exported="true"
-            android:parentActivityName=".MapActivity">
+            android:parentActivityName="com.dxk.dxkapplication.MapActivity">
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.dxk.dxkapplication.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.dxkapplication;
+package com.dxk.dxkapplication;
 
 public class Picasso {
 }

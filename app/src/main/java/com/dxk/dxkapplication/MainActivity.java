@@ -1,4 +1,4 @@
-package com.example.dxkapplication;
+package com.dxk.dxkapplication;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
